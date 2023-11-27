@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231127 19:57:31.621" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="C:\Users\server-thiago\Documents\Estudos\Treinamento\Web\features\login.robot">
+<test id="s1-t1" name="CT001:Realizar login com sucesso" line="12">
+<kw name="Dado que acesso o sistema" library="context_steps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${DATA_CONTEXT}[url]</arg>
+<arg>${DATA_CONTEXT}[chrome]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231127 19:57:33.304" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20231127 19:57:33.302" endtime="20231127 19:57:38.205"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20231127 19:57:38.206" endtime="20231127 19:57:38.213"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231127 19:57:38.214" endtime="20231127 19:57:41.427"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGE_CONTEXT}[form_login]</arg>
+<arg>30</arg>
+<arg>Erro ao tentar acessar o sistema!</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231127 19:57:41.429" endtime="20231127 19:57:42.056"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231127 19:57:42.622" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231127 19:57:42.056" endtime="20231127 19:57:42.622"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:33.302" endtime="20231127 19:57:42.622"/>
+</kw>
+<kw name="Dado que preencho usuario &quot;${DATA_LOGIN}[user]&quot; e Senha &quot;${DATA_LOGIN}[pwd]&quot;" library="login_steps" sourcename="Dado que preencho usuario &quot;${str_user}&quot; e Senha &quot;${str_pwd}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[txt_username]</arg>
+<arg>${str_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 19:57:42.625" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20231127 19:57:42.624" endtime="20231127 19:57:42.975"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[txt_pwd]</arg>
+<arg>${str_pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 19:57:42.977" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20231127 19:57:42.975" endtime="20231127 19:57:43.246"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231127 19:57:43.444" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231127 19:57:43.246" endtime="20231127 19:57:43.445"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:42.623" endtime="20231127 19:57:43.445"/>
+</kw>
+<kw name="Quando efetuo o click no botao Login" library="login_steps">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[btn_login]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231127 19:57:43.447" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20231127 19:57:43.446" endtime="20231127 19:57:43.635"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:43.446" endtime="20231127 19:57:43.635"/>
+</kw>
+<kw name="Entao valido o acesso" library="login_steps">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGE_HOME}[main_menu]</arg>
+<arg>30</arg>
+<arg>Página home não foi carregada!</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231127 19:57:43.636" endtime="20231127 19:57:45.633"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231127 19:57:46.199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231127 19:57:45.633" endtime="20231127 19:57:46.199"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:43.636" endtime="20231127 19:57:46.199"/>
+</kw>
+<kw name="Quando fecho o sistema" library="context_steps" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231127 19:57:46.201" endtime="20231127 19:57:49.073"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:46.200" endtime="20231127 19:57:49.074"/>
+</kw>
+<status status="PASS" starttime="20231127 19:57:33.301" endtime="20231127 19:57:49.075"/>
+</test>
+<doc>Testes da página de login.</doc>
+<status status="PASS" starttime="20231127 19:57:31.624" endtime="20231127 19:57:49.079"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231127 19:57:33.290" level="WARN">Imported resource file 'C:\Users\server-thiago\Documents\Estudos\Treinamento\Web\resources\custom_keywords.robot' is empty.</msg>
+</errors>
+</robot>
