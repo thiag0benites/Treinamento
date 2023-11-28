@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231128 15:35:10.084" rpa="false" schemaversion="4">
+<suite id="s1" name="Admin" source="C:\Users\server-thiago\Documents\Estudos\Treinamento\Web\features\admin.robot">
+<test id="s1-t1" name="CT002:Cadastrar novo usuario" line="13">
+<kw name="Dado que acesso o sistema" library="context_steps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${DATA_CONTEXT}[url]</arg>
+<arg>${DATA_CONTEXT}[chrome]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231128 15:35:11.601" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20231128 15:35:11.600" endtime="20231128 15:35:18.552"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20231128 15:35:18.552" endtime="20231128 15:35:18.555"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231128 15:35:18.555" endtime="20231128 15:35:18.691"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGE_CONTEXT}[form_login]</arg>
+<arg>30</arg>
+<arg>Erro ao tentar acessar o sistema!</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231128 15:35:18.691" endtime="20231128 15:35:19.175"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231128 15:35:19.847" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231128 15:35:19.175" endtime="20231128 15:35:19.847"/>
+</kw>
+<status status="PASS" starttime="20231128 15:35:11.600" endtime="20231128 15:35:19.848"/>
+</kw>
+<kw name="Dado que preencho usuario &quot;${DATA_LOGIN}[user]&quot; e Senha &quot;${DATA_LOGIN}[pwd]&quot;" library="login_steps" sourcename="Dado que preencho usuario &quot;${str_user}&quot; e Senha &quot;${str_pwd}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[txt_username]</arg>
+<arg>${str_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231128 15:35:19.851" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20231128 15:35:19.850" endtime="20231128 15:35:20.063"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[txt_pwd]</arg>
+<arg>${str_pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231128 15:35:20.065" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20231128 15:35:20.064" endtime="20231128 15:35:20.284"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231128 15:35:20.422" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231128 15:35:20.285" endtime="20231128 15:35:20.423"/>
+</kw>
+<status status="PASS" starttime="20231128 15:35:19.849" endtime="20231128 15:35:20.423"/>
+</kw>
+<kw name="Quando efetuo o click no botao Login" library="login_steps">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}[btn_login]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231128 15:35:20.424" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20231128 15:35:20.424" endtime="20231128 15:35:20.600"/>
+</kw>
+<status status="PASS" starttime="20231128 15:35:20.423" endtime="20231128 15:35:20.601"/>
+</kw>
+<kw name="Entao valido o acesso" library="login_steps">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGE_HOME}[main_menu]</arg>
+<arg>30</arg>
+<arg>Página home não foi carregada!</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231128 15:35:20.602" endtime="20231128 15:35:22.381"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231128 15:35:22.960" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231128 15:35:22.381" endtime="20231128 15:35:22.960"/>
+</kw>
+<status status="PASS" starttime="20231128 15:35:20.601" endtime="20231128 15:35:22.960"/>
+</kw>
+<kw name="Dado que acesso o menu &quot;${DATA_ADMIN}[item_menu]&quot;" library="admin_steps" sourcename="Dado que acesso o menu &quot;${item_menu}&quot;">
+<kw name="Click item menu" library="admin_page">
+<arg>${item_menu}</arg>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//a/span[text()='${item}']</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20231128 15:35:23.359" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-7.png"&gt;&lt;img src="selenium-element-screenshot-7.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231128 15:35:22.972" endtime="20231128 15:35:23.359"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Click Element</arg>
+<arg>xpath=//a/span[text()='${item}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a/span[text()='${item}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231128 15:35:23.362" level="INFO">Clicking element 'xpath=//a/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20231128 15:35:23.360" endtime="20231128 15:35:25.005"/>
+</kw>
+<msg timestamp="20231128 15:35:25.006" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20231128 15:35:23.359" endtime="20231128 15:35:25.006"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;False&quot;">
+<kw name="Fail" library="BuiltIn">
+<arg>Não foi possível efetuar o click no menu ${item}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20231128 15:35:25.006" endtime="20231128 15:35:25.006"/>
+</kw>
+<status status="NOT RUN" starttime="20231128 15:35:25.006" endtime="20231128 15:35:25.006"/>
+</branch>
+<status status="PASS" starttime="20231128 15:35:25.006" endtime="20231128 15:35:25.006"/>
+</if>
+<status status="PASS" starttime="20231128 15:35:22.971" endtime="20231128 15:35:25.006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGE_ADMIN}[btn_add]</arg>
+<arg>30</arg>
+<arg>Erro ao carregar a tela ${item_menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20231128 15:35:55.405" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231128 15:35:55.405" level="FAIL">Erro ao carregar a tela Admin</msg>
+<status status="FAIL" starttime="20231128 15:35:25.006" endtime="20231128 15:35:55.409"/>
+</kw>
+<status status="FAIL" starttime="20231128 15:35:22.970" endtime="20231128 15:35:55.409"/>
+</kw>
+<kw name="E realizo o click no botao [+ Add]" library="admin_steps">
+<status status="NOT RUN" starttime="20231128 15:35:55.410" endtime="20231128 15:35:55.410"/>
+</kw>
+<kw name="E preencho os campos [User Role], [Employee Name], [Status], [Username], [Password] e [Confirm Password]" library="admin_steps">
+<status status="NOT RUN" starttime="20231128 15:35:55.410" endtime="20231128 15:35:55.410"/>
+</kw>
+<kw name="Quando fecho o sistema" library="context_steps" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231128 15:35:55.412" endtime="20231128 15:35:58.611"/>
+</kw>
+<status status="PASS" starttime="20231128 15:35:55.412" endtime="20231128 15:35:58.611"/>
+</kw>
+<status status="FAIL" starttime="20231128 15:35:11.598" endtime="20231128 15:35:58.611">Erro ao carregar a tela Admin</status>
+</test>
+<doc>Testes da menu admin.</doc>
+<status status="FAIL" starttime="20231128 15:35:10.088" endtime="20231128 15:35:58.613"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Admin">Admin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

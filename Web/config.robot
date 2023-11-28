@@ -4,5 +4,5 @@ Documentation       Configurações básicas do ambiente, chamadas de biblioteca
 Library             SeleniumLibrary
 Library             FakerLibrary    locale=pt_BR
 # Massa de dados fixa do teste
-Resource            resources/custom_keywords.robot
+# Resource            resources/custom_keywords.robot
 Resource            data/test_data.robot

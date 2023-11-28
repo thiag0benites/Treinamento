@@ -9,3 +9,5 @@ Documentation       Dados utilizados nos testes. Cada dicionário representa uma
 
 &{DATA_LOGIN}       user=Admin
 ...                 pwd=admin123
+
+&{DATA_ADMIN}       item_menu=Admin
